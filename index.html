@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Listings</title>
+    <link rel="stylesheet" href="Styles.css" />
+    <script src="script.js"></script>
+  </head>
+  <style></style>
+  <body>
+    <!-- Filters Section -->
+    <div class="filters">
+      <select id="locationFilter" onchange="applyFilters()">
+        <option value="">Location</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Gurugram">Gurugram</option>
+        <option value="Noida">Noida</option>
+        <option value="New York">New York</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Lucknow">Lucknow</option>
+        <option value="Bihar">Bihar</option>
+      </select>
+
+      <select id="priceFilter" onchange="applyFilters()">
+        <option value="">Price Range</option>
+        <option value="0-100">0-$100</option>
+        <option value="101-200">$101-$200</option>
+        <option value="201-300">$201-$300</option>
+        <option value="201-500">$201-$500</option>
+        <option value="201-800">$201-$800</option>
+        <option value="800-1000">$800-$1000</option>
+        <option value="1000-1300">$1000-$1300</option>
+        <option value="1300-2000">$1300-$2000</option>
+      </select>
+
+      <select id="bedroomsFilter" onchange="applyFilters()">
+        <option value="">Bedrooms</option>
+        <option value="1">1 Bedroom</option>
+        <option value="2">2 Bedrooms</option>
+        <option value="3">3 Bedrooms</option>
+      </select>
+    </div>
+
+    <!-- Property Listings Section -->
+    <div id="property-listings" class="property-listings">
+      <!-- Properties will be displayed here dynamically -->
+    </div>
+
+    <!-- Cart Section -->
+    <div id="cart" class="cart">
+      <h3>Your Bookings</h3>
+      <div id="cartItems"></div>
+      <p>Total: $<span id="totalCost">0</span></p>
+      <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <!-- Checkout Section -->
+    <div id="checkoutSection" class="checkout-section">
+      <h3>Checkout</h3>
+      <form id="checkoutForm" onsubmit="submitBooking(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+
+        <label for="payment">Payment Details:</label>
+        <input type="text" id="payment" required />
+
+        <button type="submit">Submit Booking</button>
+      </form>
+    </div>
+  </body>
+</html>
